@@ -7,7 +7,7 @@ export class EventBusService {
     private _messages$ = new Subject<EventBusArgs>();
 
     emit(eventType: string, data: any) {
-        this._messages$.next({ type: eventType, data: data });
+        this._messages$.next({type: eventType, data: data});
     }
 
     observe(eventType: string) {

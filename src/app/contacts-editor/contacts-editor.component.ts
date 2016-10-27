@@ -19,15 +19,17 @@ export class ContactsEditorComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private eventbusService: EventBusService
-  ) { }
-
-  ngOnInit() {
+  ) {
     let id = this.route.snapshot.params['id'];
     this.contactsService.getContact(id)
-      .subscribe(contact => {
-        this.contact = contact;
-        this.eventbusService.emit('appTitleChanged', 'Editor: '+this.contact.name);
-      });
+        .subscribe(contact => {
+          this.contact = contact;
+          this.eventbusService.emit('appTitleChanged', 'Editor: '+this.contact.name);
+        });
+  }
+
+  ngOnInit() {
+
 
   }
 

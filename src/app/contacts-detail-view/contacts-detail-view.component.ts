@@ -16,9 +16,6 @@ export class ContactsDetailViewComponent implements OnInit {
                 private route: ActivatedRoute,
                 private router: Router,
                 private eventbusService: EventBusService) {
-    }
-
-    ngOnInit() {
         let id = this.route.snapshot.params['id'];
 
         this.contactsService.getContact(id)
@@ -26,6 +23,10 @@ export class ContactsDetailViewComponent implements OnInit {
                 this.contact = contact;
                 this.eventbusService.emit('appTitleChanged', this.contact.name);
             });
+    }
+
+    ngOnInit() {
+
     }
 
     editContact(contact: Contact) {
