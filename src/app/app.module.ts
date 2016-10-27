@@ -12,6 +12,7 @@ import 'rxjs/add/operator/merge';
 
 import { ContactsAppComponent } from './contacts.component';
 import { ContactsDetailComponent } from './contacts-detail/contacts-detail.component';
+import { ContactsDetailViewComponent } from './contacts-detail-view/contacts-detail-view.component';
 import { ContactsEditorComponent } from './contacts-editor/contacts-editor.component';
 import { ContactsHeaderComponent } from './contacts-header/contacts-header.component';
 import { ContactsListComponent } from './contacts-list/contacts-list.component';
@@ -23,9 +24,11 @@ import { APP_PROVIDERS } from './app.providers';
   declarations: [
     ContactsAppComponent,
     ContactsDetailComponent,
+    ContactsDetailViewComponent,
     ContactsHeaderComponent,
     ContactsListComponent,
-    ContactsEditorComponent
+    ContactsEditorComponent,
+    ContactsDetailViewComponent
   ],
   imports: [
     BrowserModule,
