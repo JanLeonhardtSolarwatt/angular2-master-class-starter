@@ -1,8 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, EventEmitter, Output, Input} from '@angular/core';
 import {Contact} from '../models/contact';
 import {ContactsService} from '../contacts.service';
-
-import {Observable} from 'rxjs/Observable';
 import {Subject} from "rxjs";
 
 
@@ -12,16 +10,13 @@ import {Subject} from "rxjs";
     styleUrls: ['./contacts-list.component.css']
 })
 export class ContactsListComponent implements OnInit {
+    @Input() contact: Contact;
+    @Output() showContact = new EventEmitter<Contact>();
 
-    contacts: Observable<Array<Contact>>;
-    private terms$ = new Subject<string>();
-
-    constructor(private contactsService: ContactsService) {
+    constructor() {
     }
 
     ngOnInit() {
-        this.contacts = this.contactsService.getContacts()
-            .takeUntil(this.terms$)
-            .merge(this.contactsService.search(this.terms$));
+
     }
 }

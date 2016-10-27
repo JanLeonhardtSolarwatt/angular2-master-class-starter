@@ -19,6 +19,7 @@ import { ContactsListComponent } from './contacts-list/contacts-list.component';
 
 import { ContactsAppRoutes } from './app.routes';
 import { APP_PROVIDERS } from './app.providers';
+import { ContactsListViewComponent } from './contacts-list-view/contacts-list-view.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { APP_PROVIDERS } from './app.providers';
     ContactsHeaderComponent,
     ContactsListComponent,
     ContactsEditorComponent,
-    ContactsDetailViewComponent
+    ContactsDetailViewComponent,
+    ContactsListViewComponent
   ],
   imports: [
     BrowserModule,
