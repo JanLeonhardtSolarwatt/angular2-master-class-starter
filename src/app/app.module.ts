@@ -17,9 +17,11 @@ import { ContactsEditorComponent } from './contacts-editor/contacts-editor.compo
 import { ContactsHeaderComponent } from './contacts-header/contacts-header.component';
 import { ContactsListComponent } from './contacts-list/contacts-list.component';
 
+
 import { ContactsAppRoutes } from './app.routes';
 import { APP_PROVIDERS } from './app.providers';
 import { ContactsListViewComponent } from './contacts-list-view/contacts-list-view.component';
+import { ContactsCreatorComponent } from './contacts-creator/contacts-creator.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { ContactsListViewComponent } from './contacts-list-view/contacts-list-vi
     ContactsListComponent,
     ContactsEditorComponent,
     ContactsDetailViewComponent,
-    ContactsListViewComponent
+    ContactsListViewComponent,
+    ContactsCreatorComponent
   ],
   imports: [
     BrowserModule,

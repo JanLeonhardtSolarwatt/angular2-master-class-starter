@@ -44,4 +44,7 @@ export class ContactsService {
             .switchMap(term => this.rawSearch(term));
     }
 
+    createContact(contact: Contact) {
+        return this.http.post(`${this.api}/contacts`, contact);
+    }
 }
