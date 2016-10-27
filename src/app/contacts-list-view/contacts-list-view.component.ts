@@ -22,7 +22,5 @@ export class ContactsListViewComponent implements OnInit {
   }
   showContact(contact: Contact) {
     this.router.navigate(['/contact', contact.id]);
-
-    //return false;
   }
 }
