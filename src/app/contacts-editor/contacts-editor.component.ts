@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { ContactsService } from '../contacts.service';
 import { Contact } from '../models/contact';
+import {EventBusService} from "../eventbus.comonent";
 
 @Component({
   selector: 'trm-contacts-editor',
@@ -16,13 +17,18 @@ export class ContactsEditorComponent implements OnInit {
   constructor(
     private contactsService: ContactsService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private eventbusService: EventBusService
   ) { }
 
   ngOnInit() {
     let id = this.route.snapshot.params['id'];
     this.contactsService.getContact(id)
-      .subscribe(contact => this.contact = contact);
+      .subscribe(contact => {
+        this.contact = contact;
+        this.eventbusService.emit('appTitleChanged', 'Editor: '+this.contact.name);
+      });
+
   }
 
   goToDetails(contact: Contact) {
