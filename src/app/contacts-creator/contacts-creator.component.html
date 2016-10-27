@@ -6,10 +6,10 @@
           <div class="input-field col s12">
             <i class="material-icons prefix">account_circle</i>
             <input id="name" name="name" class="validate" required minlength="3" #name="ngModel" ngModel [ngClass]="{'invalid': (!name.valid && !name.pristine && !name.untouched)}">
-            <p *ngIf="name?.errors?.minlength">
+            <p class="error-msg" *ngIf="name?.errors?.minlength  && !name.pristine && !name.untouched">
               Name: 3 chars minimum! Current length: {{name.value.length}}
             </p>
-            <p *ngIf="name?.errors?.required">
+            <p class="error-msg" *ngIf="name?.errors?.required  && !name.pristine && !name.untouched">
               Name: is required!
             </p>
             <label class="active" for="name">Name</label>
